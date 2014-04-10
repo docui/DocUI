@@ -38,13 +38,15 @@
     <Reference Include="Common.Logging.Core">
       <HintPath>packages\Common.Logging.Core.2.2.0\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FileSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libraries\FileSystem.dll</HintPath>
+    <Reference Include="Filedrops.FileSystem">
+      <HintPath>packages\Filedrops.FileSystem.1.0.0\Filedrops.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Filedrops.FileSystem.UI">
+      <HintPath>packages\Filedrops.FileSystem.UI.1.0.0\Filedrops.FileSystem.UI.dll</HintPath>
     </Reference>
     <Reference Include="ModernImageLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>libraries\ModernImageLibrary.dll</HintPath>
+      <HintPath>packages\ModernImageLibrary.1.0.0\ModernImageLibrary.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore">
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -66,10 +68,6 @@
     </Reference>
     <Reference Include="System.Xml">
       <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libraries\UI.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase">
       <EmbedInteropTypes>False</EmbedInteropTypes>
