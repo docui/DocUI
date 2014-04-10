@@ -1,0 +1,20 @@
+<Components>
+  <Component schematype="boolean" type="Org.DocUI.FormBuilder.Components.DocUIBoolean"/>
+  <Component schematype="int" type="Org.DocUI.FormBuilder.Components.DocUIInteger"/>
+  <Component schematype="string" type="Org.DocUI.FormBuilder.Components.DocUIString"/>
+  <Component schematype="time" type="Org.DocUI.FormBuilder.Components.DocUITime"/>
+  <Component schematype="date" type="Org.DocUI.FormBuilder.Components.DocUIDate"/>
+  <Component schematype="dateTime" type="Org.DocUI.FormBuilder.Components.DocUIDateTime"/>
+  <Component schematype="anyURI" type="Org.DocUI.FormBuilder.Components.DocUIString"/>
+
+  <Component schematype="FolderType" type="Org.DocUI.FormBuilder.Components.DocUIFolder"/>
+  <Component schematype="FileType" type="Org.DocUI.FormBuilder.Components.DocUIFile"/>
+  <Component schematype="FileListType" type="Org.DocUI.FormBuilder.Components.DocUIFileList"/>
+  <Component schematype="OrderedFileListType" type="Org.DocUI.FormBuilder.Components.DocUIOrderedFileList"/>
+
+  <Component schematype="PasswordType" type="Org.DocUI.FormBuilder.Components.DocUIPassword"/>
+
+  <Component schematype="MessageType" type="Org.DocUI.FormBuilder.Components.DocUIBigTextBox"/>
+
+  <Component schematype="GUIDType" type="Org.DocUI.FormBuilder.Components.DocUIGUID"/>
+</Components>

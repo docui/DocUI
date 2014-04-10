@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Lieven Janssen (TIBOTEC-VIRCO CVA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:uis="uispecificattributes" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="GUIDType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="CredentialsType">
+		<xs:sequence>
+			<xs:element name="Username" type="xs:string" default="">
+				<xs:annotation>
+					<xs:documentation>Username</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Password" type="PasswordType" default="">
+				<xs:annotation>
+					<xs:documentation>Password</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Domain" type="xs:string" default="">
+				<xs:annotation>
+					<xs:documentation>Domain</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="checked" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="CredentialsTypeNoDomain">
+		<xs:sequence>
+			<xs:element name="Username" type="xs:string" default="">
+				<xs:annotation>
+					<xs:documentation>Username</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Password" type="PasswordType" default="">
+				<xs:annotation>
+					<xs:documentation>Password</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="checked" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="FileListType">
+		<xs:sequence>
+			<xs:element name="Option" default="" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderedFileListType">
+		<xs:sequence>
+			<xs:element name="Option" default="" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PasswordType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" default="password"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="FolderType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="MetadataFolderType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" default="split"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SystemType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Folder/Share" uis:path="\xml_documents\xmls\Folder.xsd"/>
+			<xs:enumeration value="Dropbox" uis:path="\xml_documents\xmls\Dropbox.xsd"/>
+			<xs:enumeration value="SharePoint" uis:path="\xml_documents\xmls\SharePoint.xsd"/>
+			<xs:enumeration value="Box.Net" uis:path="\xml_documents\xmls\BoxNet.xsd"/>
+			<xs:enumeration value="Email" uis:path="\xml_documents\xmls\Email.xsd"/>
+			<xs:enumeration value="Http" uis:path="\xml_documents\xmls\Http.xsd"/>
+			<xs:enumeration value="FTP/sFTP" uis:path="\xml_documents\xmls\FTP.xsd"/>
+			<xs:enumeration value="Liferay" uis:path="\xml_documents\xmls\Liferay.xsd"/>
+			<xs:enumeration value="WebDAV" uis:path="\xml_documents\xmls\WebDAV.xsd"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FileType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MetadataFileType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="MetadataSplitType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" default="split"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="MetadataExpandType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" default="expand"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SelectType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MetadataValueType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MetadataTreeType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PortType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="-1"/>
+			<xs:maxInclusive value="65535"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MessageType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" default="split"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

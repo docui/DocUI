@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Org.DocUI.MainComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+             xmlns:c="clr-namespace:Org.DocUI">
+
+    <UserControl.CommandBindings>
+        
+        <CommandBinding Command="{x:Static c:MainComponent.OpenSolution}" Executed="OpenSolutionMenu_Click" />
+        <CommandBinding Command="{x:Static c:MainComponent.NewSolution}" Executed="NewSolutionMenu_Click" />
+        <CommandBinding Command="{x:Static c:MainComponent.CloseSolution}" Executed="CloseSolutionMenu_Click"
+                        CanExecute="CloseSolutionMenu_CanExecute" />
+        
+        <CommandBinding Command="{x:Static c:MainComponent.OpenProject}" Executed="OpenProjectMenu_Click" />
+        <CommandBinding Command="{x:Static c:MainComponent.NewProject}" Executed="NewProjectMenu_Click" />
+        <CommandBinding Command="{x:Static c:MainComponent.CloseProject}" Executed="CloseProjectMenu_Click"
+                        CanExecute="CloseProjectMenu_CanExecute"/>
+        <CommandBinding Command="{x:Static c:MainComponent.DeleteProject}" Executed="DeleteProjectMenu_Click"
+                        CanExecute="DeleteProjectMenu_CanExecute"/>
+
+        <CommandBinding Command="{x:Static c:MainComponent.SaveForm}" Executed="SaveFormMenu_Click"
+                        CanExecute="SaveFormMenu_CanExecute" />
+        <CommandBinding Command="{x:Static c:MainComponent.CloseForm}" Executed="CloseFormMenu_Click"
+                        CanExecute="CloseFormMenu_CanExecute" />
+    </UserControl.CommandBindings>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>    
+        <DockPanel Name="Dockpanel">
+        <Menu DockPanel.Dock="Top">
+            <!-- The values of the "Visibility"-fields are the default values in a Project-based context. These values are changed in MainComponent.xaml.cs -->
+                <MenuItem Name="SolutionMenu" Header="SOLUTION" Padding="5" Visibility="Collapsed">
+                    <MenuItem Name="OpenSolutionMenu" Header="Open" Command="{x:Static c:MainComponent.OpenSolution}"/>
+                    <MenuItem Name="NewSolutionMenu" Header="New" Command="{x:Static c:MainComponent.NewSolution}"/>
+                    <MenuItem Name="CloseSolutionMenu" Header="Close" Command="{x:Static c:MainComponent.CloseSolution}"/>
+                </MenuItem>
+                <MenuItem Name="ProjectMenu" Header="PROJECT" Padding="5">
+                    <MenuItem Name="OpenProjectMenu" Header="Open" Command="{x:Static c:MainComponent.OpenProject}"/>
+                    <MenuItem Name="NewProjectMenu" Header="New" Command="{x:Static c:MainComponent.NewProject}"/>
+                    <MenuItem Name="CloseProjectMenu" Header="Close" Command="{x:Static c:MainComponent.CloseProject}"/>
+                    <MenuItem Name="DeleteProjectMenu" Header="Delete" Command="{x:Static c:MainComponent.DeleteProject}"/>
+                </MenuItem>
+                <MenuItem Name="FormMenu" Header="FORM" Padding="5">
+                    <MenuItem Name="SaveFormMenu" Header="Save form" Command="{x:Static c:MainComponent.SaveForm}"/>
+                    <MenuItem Name="CloseFormMenu" Header="Close form" Command="{x:Static c:MainComponent.CloseForm}"/>
+                </MenuItem>
+                <MenuItem Name="EditMenu" Header="EDIT" Padding="5">
+                    <MenuItem Name="UndoMenu" Header="Undo" Command="Undo"/>
+                    <MenuItem Name="RedoMenu" Header="Redo" Command="Redo"/>
+                    <Separator/>
+                    <MenuItem  Name="CutMenu" Header="Cut" Command="Cut"/>
+                    <MenuItem  Name="CopyMenu" Header="Copy" Command="Copy"/>
+                    <MenuItem  Name="PasteMenu" Header="Paste" Command="Paste"/>
+                    <MenuItem  Name="DeleteMenu" Header="Delete" Command="Delete"/>
+                    <Separator/>
+                    <MenuItem  Name="SelectAllMenu" Header="Select All" Command="SelectAll"/>
+                </MenuItem>
+            </Menu>
+
+<!--
+        <Ribbon Name="ribbon" DockPanel.Dock="Top" Background="GhostWhite">            
+            <RibbonTab Header="FILE" KeyTip="H" >
+                <RibbonGroup x:Name="FileGroup" Header="Project">
+                    <RibbonButton Name="SaveMenu" Label="Save" KeyTip="FP" Command="Save"/>
+                    <RibbonButton Name="OpenMenu" Label="Open" Command="Open"/>
+                    <RibbonButton Name="NewMenu" Label="New" KeyTip="X" Command="New"/>
+                    <RibbonButton Name="CloseMenu" Label="Close" KeyTip="C" Command="Close"/>
+                </RibbonGroup>
+            </RibbonTab>
+                <RibbonTab Header="EDIT" KeyTip="H" >
+                    <RibbonGroup x:Name="ClipboardGroup" Header="Home">
+                        <RibbonMenuButton Label="Paste" KeyTip="V">
+                            <RibbonMenuItem Header="Keep Text Only" KeyTip="T"/>
+                            <RibbonMenuItem Header="Paste Special..." KeyTip="S"/>
+                        </RibbonMenuButton>
+                        <RibbonButton Label="Cut" KeyTip="X" />
+                        <RibbonButton Label="Copy" KeyTip="C" />
+                        <RibbonButton Label="Format Painter" KeyTip="FP" />
+                    </RibbonGroup>
+                </RibbonTab>
+            </Ribbon>
+-->
+
+            <Grid DockPanel.Dock="Top" Background="#F8F8F8">
+                <avalonDock:DockingManager x:Name="dockingManager">
+                    <avalonDock:LayoutRoot>
+                        <avalonDock:LayoutPanel Orientation="Horizontal">
+                            <avalonDock:LayoutAnchorablePane DockWidth="250">
+                                <avalonDock:LayoutAnchorable x:Name="managerpanel" Title="Project Explorer" CanClose="False" CanHide="False">
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>
+                            <avalonDock:LayoutDocumentPane x:Name="DocumentContainer" />
+                        </avalonDock:LayoutPanel>
+                    </avalonDock:LayoutRoot>
+                    <avalonDock:DockingManager.DocumentHeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding IconSource}" Margin="0,0,4,0" Width="15" Height="15"/>
+                                <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </avalonDock:DockingManager.DocumentHeaderTemplate>
+                    <avalonDock:DockingManager.DocumentTitleTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding IconSource}" Margin="0,0,4,0" Width="15" Height="15"/>
+                                <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </avalonDock:DockingManager.DocumentTitleTemplate>
+                </avalonDock:DockingManager>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>
