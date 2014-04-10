@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an Assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an Assembly.
-[assembly: AssemblyTitle("filedrops.docui")]
+[assembly: AssemblyTitle("DocUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("filedrops.docui")]
+[assembly: AssemblyCompany("xplore+")]
+[assembly: AssemblyProduct("DocUI")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
