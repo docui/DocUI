@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DocUI</id>
+        <version>1.0.0</version>
+        <title>DocUI</title>
+        <authors>xplore+</authors>
+        <owners>xplore+</owners>
+        <projectUrl>https://github.com/docui/DocUI</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>DocUI</description>
+        <copyright>xplore+ 2013</copyright>
+        <tags>docui</tags>
+        <dependencies>
+            <dependency id="Common.Logging" version="2.2.0" />
+            <dependency id="WPF.JoshSmith" version="2.0.0.0" />
+            <dependency id="Extended.Wpf.Toolkit" version="2.1.0" />
+            <dependency id="Filedrops.FileSystem.UI" version="1.0.0" />
+            <dependency id="Microsoft.SharePoint.Client" version="14.0.4762.1000" />
+            <dependency id="Microsoft.Xml.XMLGen" version="1.0.0" />
+            <dependency id="Wpf.Themes" version="1.1.0" />
+            <dependency id="wpfthemes" version="0.0.1" />
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />
+            <frameworkAssembly assemblyName="PresentationCore" targetFramework="" />
+            <frameworkAssembly assemblyName="PresentationFramework" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="bin\Debug\DocUI.dll" target="DocUI.dll" />
+    </files>
+</package>
