@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DocUI</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>DocUI</title>
         <authors>xplore+</authors>
         <owners>xplore+</owners>
@@ -14,12 +14,9 @@
         <dependencies>
             <dependency id="Common.Logging" version="2.2.0" />
             <dependency id="WPF.JoshSmith" version="2.0.0.0" />
-            <dependency id="Extended.Wpf.Toolkit" version="2.1.0" />
+            <dependency id="Extended.Wpf.Toolkit" version="2.0.0" />
             <dependency id="Filedrops.FileSystem.UI" version="1.0.0" />
-            <dependency id="Microsoft.SharePoint.Client" version="14.0.4762.1000" />
             <dependency id="Microsoft.Xml.XMLGen" version="1.0.0" />
-            <dependency id="Wpf.Themes" version="1.1.0" />
-            <dependency id="wpfthemes" version="0.0.1" />
         </dependencies>
         <frameworkAssemblies>
             <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />

@@ -44,11 +44,11 @@ namespace Org.DocUI.FormBuilder.Components
             this.parentForm = parentForm;
 
             _projectpath = parentForm.ProjectSystem.WorkingDirectory.FullName;
-            _ext = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "_ext");
-            _folder = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "_folder");
-            string tmprel = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "_relative");
+            _ext = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "ext");
+            _folder = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "folder");
+            string tmprel = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "relative");
             _relative = tmprel == "true" ? true : false;
-            string tmpreq = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "_required");
+            string tmpreq = XmlSchemaUtilities.tryGetUnhandledAttribute(xsdNode, "required");
             _required = tmpreq == "true" ? true : false;
 
             DockPanel panel = new DockPanel();
